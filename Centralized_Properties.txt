@@ -1,0 +1,26 @@
+#Actuator Properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#Database Properties
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/employee_management_system
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+#Eureka Properties
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
