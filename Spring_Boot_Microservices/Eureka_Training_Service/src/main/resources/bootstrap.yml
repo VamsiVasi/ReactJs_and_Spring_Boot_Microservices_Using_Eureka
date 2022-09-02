@@ -1,0 +1,12 @@
+#Consul properties
+#spring:
+ # cloud:
+  #  consul:
+   #   config:
+    #    fail-fast: false
+     #   enabled: true
+      #  prefix: config
+       # defaultContext: application
+        #data-key: data
+        #profileSeparator: '::'
+        #format: YAML
