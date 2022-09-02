@@ -1,0 +1,181 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #323741;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.stark-logo {
+  height: 50px;
+  margin-top: -15px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stark-logo {
+    animation: stark-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes stark-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: Stark;
+  src: url(../public/font/AvengeroDisassembledRegular-nRvd4.ttf);
+}
+
+.navbar-images {
+  height: 45px;
+}
+
+.navbar-images:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.welcome-logo {
+  height: 60px;
+}
+
+.error {
+  font-weight: 560;
+  color: red;
+}
+
+body {
+  background-image: url('../src/bg.jpg');
+  background-color: steelblue;
+  height: 630px;
+  background-position: fixed;
+  background-size: cover;
+}
+
+.employeeList {
+  font-weight: 560;
+  margin-top: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(8, 43, 121), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(8, 43, 121);
+}
+
+tbody {
+  background-color: white;
+}
+
+tr:hover {
+  font-weight: bold;
+}
+
+thead {
+  background-color: #323741;
+  color: white;
+}
+
+h3 {
+  color: white;
+  text-shadow: 1px 1px 2px rgb(8, 43, 121), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(8, 43, 121);
+}
+
+.starkTitle {
+  font-family: 'Stark';
+  font-size: 25px;
+  position: relative;
+  margin-top: -51.5px;
+  text-align: center;
+  color: white;
+}
+
+.welcomeTitle {
+  /* background-color: #323741; */
+  font-weight: 560;
+  position: relative;
+  margin-top: -60px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(8, 43, 121), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(8, 43, 121);
+}
+
+label {
+  font-weight: 560;
+  color: white;
+}
+
+button:hover {
+  font-weight: bold;
+}
+
+.cardTitle {
+  font-weight: 560;
+  margin-top: 18px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(8, 43, 121), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(8, 43, 121);
+}
+
+.cardTitle1 {
+  font-weight: 560;
+  margin-top: 18px;
+  text-align: center;
+  color: white;
+  background-color: #323741;
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px rgb(8, 43, 121), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(8, 43, 121);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 8px 8px rgb(8, 107, 199, 0.274);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 0 8px 8px rgb(204, 12, 12, 0.274);
+}
+
+.btn-success:hover {
+  box-shadow: 0 0 8px 8px rgb(5, 131, 12, 0.274);
+}
+
+.btn-info:hover {
+  box-shadow: 0 0 8px 8px rgb(5, 132, 141, 0.274);
+}
+
+.footer {
+  font-size: large;
+  font-weight: 560;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(8, 43, 121), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(8, 43, 121);
+}
+
+.underline {
+  color: white;
+  text-decoration: none;
+}
+
+.underline:hover {
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 2px white, 0 0 2px white;
+}
