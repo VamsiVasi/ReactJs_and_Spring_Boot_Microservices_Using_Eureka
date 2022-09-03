@@ -1,9 +1,12 @@
 package com.stark.employee_service.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,12 +74,31 @@ public class EmployeeService {
 				.get();
 	}
 
-	// Get list of employees using employee first name
-	public List<Employee> getEmployeesByFirstName(String firstName) throws ResourceNotFoundException {
-		List<Employee> emps = employeeRepo.findAllByFirstName(firstName);
+	// Get list of employees using employee name
+	public List<Employee> getEmployeesByName(String userName) throws ResourceNotFoundException {
+		List<Employee> emps = new ArrayList<>();
+		List<Employee> empsByFirstName = employeeRepo.findAllByFirstName(userName);
+		emps.addAll(empsByFirstName);
+		List<Employee> empsByMiddleName = employeeRepo.findAllByMiddleName(userName);
+		emps.addAll(empsByMiddleName);
+		List<Employee> empsByLastName = employeeRepo.findAllByLastName(userName);
+		emps.addAll(empsByLastName);
 		if (emps.isEmpty()) {
-			LOGGER.error("No Employees with name '" + firstName + "'  were found :: getEmployeesByFirstName");
-			throw new ResourceNotFoundException("No Employees were found with given name : " + firstName);
+			LOGGER.error("No Employees with name '" + userName + "'  were found :: getEmployeesByName");
+			throw new ResourceNotFoundException("No Employees were found with given name : " + userName);
+		}
+		Set<Integer> duplicates = new HashSet<>();
+		for (int i = 0; i < emps.size(); i++) {
+			for (int j = i + 1; j < emps.size(); j++) {
+				if (emps.get(i).getId() == emps.get(j).getId()) {
+					duplicates.add(j);
+				}
+			}
+		}
+		List<Integer> duplicatesIndexList = new ArrayList<Integer>(duplicates);
+		for (int k = duplicatesIndexList.size() - 1; k >= 0; k--) {
+			int duplicateValue = duplicatesIndexList.get(k);
+			emps.remove(duplicateValue);
 		}
 		return emps;
 	}

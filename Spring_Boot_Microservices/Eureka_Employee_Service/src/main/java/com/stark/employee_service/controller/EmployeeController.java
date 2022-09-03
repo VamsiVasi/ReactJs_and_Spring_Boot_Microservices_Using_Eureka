@@ -80,12 +80,12 @@ public class EmployeeController {
 		return new ResponseEntity<>(emp, HttpStatus.OK);
 	}
 
-	// Get list of employees using employee first name
-	@GetMapping(value = "/name/{firstName}")
-	public ResponseEntity<List<Employee>> getEmployeesByFirstName(@PathVariable String firstName)
+	// Get list of employees using employee name
+	@GetMapping(value = "/name/{userName}")
+	public ResponseEntity<List<Employee>> getEmployeesByName(@PathVariable String userName)
 			throws ResourceNotFoundException {
-		LOGGER.info("Inside Employee Controller :: getEmployeesByFirstName");
-		List<Employee> emps = employeeService.getEmployeesByFirstName(firstName);
+		LOGGER.info("Inside Employee Controller :: getEmployeesByName");
+		List<Employee> emps = employeeService.getEmployeesByName(userName);
 		return new ResponseEntity<>(emps, HttpStatus.OK);
 	}
 
