@@ -24,7 +24,7 @@ class ListEmployeeComponent extends Component {
             });
         }
         else if (this.state.name) {
-            EmployeeService.getEmployeesByFirstName(this.state.name).then(res => {
+            EmployeeService.getEmployeesByName(this.state.name).then(res => {
                 this.setState({ employees: res.data });
             });
         }

@@ -16,8 +16,8 @@ class EmployeeService {
         return axios.get(EMPLOYEE_API_BASE_URL + "/" + employeeId);
     }
 
-    getEmployeesByFirstName(firstName) {
-        return axios.get(EMPLOYEE_API_BASE_URL + "/name/" + firstName)
+    getEmployeesByName(userName) {
+        return axios.get(EMPLOYEE_API_BASE_URL + "/name/" + userName)
     }
 
     updateEmployee(employee, employeeId) {
